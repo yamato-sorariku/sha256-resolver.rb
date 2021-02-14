@@ -13,7 +13,7 @@ while true
     _end = i + window_size
     i = i + window_size + 1
     fork do
-      (_start..._end).each { |_i|
+      (_start.._end).each { |_i|
         input = _i.to_s(16)
         if Digest::SHA256.hexdigest(input) == hash
           printf "resolved! result is %s\n", input
